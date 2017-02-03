@@ -12,3 +12,11 @@
   
 # Add prefix to all filenames in directory
   for file in *; do mv $file prefix$file; done;
+  
+# Look for a pattern in all files in a directory, recursively.
+  grep -rnw '/path/to/somewhere/' -e "pattern"
+  # -r or -R is recursive,
+  # -n is line number, and
+  # -w stands for match the whole word.
+  # -l (lower-case L) can be added to just give the file name of matching files.
+
