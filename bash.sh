@@ -20,3 +20,6 @@
   # -w stands for match the whole word.
   # -l (lower-case L) can be added to just give the file name of matching files.
 
+# Recursively copy all files of certain type to (single) new directory.
+  find . -name \*.jpg -exec cp {} newDir \;
+
