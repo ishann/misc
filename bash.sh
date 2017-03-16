@@ -43,5 +43,9 @@
   # Replace a substring in filenames. [cf. madratman]
     rename 's/pastSubstring/presSubstring/' *.FILE_EXTENSION
 
-
+# Count number of files in every sub-directory in present directory
+  for i in $(find . -maxdepth 1 -type d) ; do 
+      echo -n $i": " ; 
+      (find $i -type f | wc -l) ; 
+  done
 
