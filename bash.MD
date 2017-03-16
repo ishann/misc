@@ -30,7 +30,7 @@
 ## Recursively copy all files of certain type to (single) new directory.
   `find . -name \*.jpg -exec cp {} newDir \;`
 
-## Resize using imagemagick. Edit extensions and dimensions before blindly copy-pasting.
+## Resize using imagemagick.
   `find . -name "*.jpg" -exec convert {} -resize 360X640 {} \;`
   
 ## Edit files (recursively).
