@@ -48,4 +48,7 @@
       echo -n $i": " ; 
       (find $i -type f | wc -l) ; 
   done
+  
+# Recursively convert all files from ext1 to ext2
+  find . -name '*.ext1' -type f -exec bash -c 'convert "$0" "${0%.ext1}.ext2"' {} \;
 
