@@ -7,14 +7,14 @@
 ## Add a prefix string to beginning of each line in text file.
   #### Edit the file in-place.
   `sed -i -e 's/^/prefix/' file`
-  # Create a new file.
+  #### Create a new file.
   `sed -e 's/^/prefix/' file > file.new`
 
 ## Editing filenames
-  # Remove string from filenames.
+  #### Remove string from filenames.
     `for file in *; do mv "${file}" "${file//\remSubstring/}"; done`
 
-  # Add string to fileneames.
+  #### Add string to fileneames.
     `for f in *; do mv "$f" "addSubstring$f"; done`
 
 ## Add prefix to all filenames in directory
@@ -22,10 +22,10 @@
   
 ## Look for a pattern in all files in a directory, recursively.
   `grep -rnw 'pathToSomewhere' -e "pattern"`
-  # -r or -R is recursive,
-  # -n is line number, and
-  # -w stands for match the whole word.
-  # -l (lower-case L) can be added to just give the file name of matching files.
+  #### -r or -R is recursive,
+  #### -n is line number, and
+  #### -w stands for match the whole word.
+  #### -l (lower-case L) can be added to just give the file name of matching files.
 
 ## Recursively copy all files of certain type to (single) new directory.
   `find . -name \*.jpg -exec cp {} newDir \;`
@@ -34,13 +34,13 @@
   `find . -name "*.jpg" -exec convert {} -resize 360X640 {} \;`
   
 ## Edit files (recursively).
-  # Recursively list all unique file extensions. [cf. madratman]
+  #### Recursively list all unique file extensions. [cf. madratman]
     `find ./ -type f | awk -F . '{print $NF}' |  sort --unique`
 
-  # Change file names to new pattern. Might require apt-get exiftool first. [cf. madratman] 
+  #### Change file names to new pattern. Might require apt-get exiftool first. [cf. madratman] 
     `exiftool -ext '' '-filename<%f_${ImageSize}.${FileType}' .`
 
-  # Replace a substring in filenames. [cf. madratman]
+  #### Replace a substring in filenames. [cf. madratman]
     `rename 's/pastSubstring/presSubstring/' *.FILE_EXTENSION`
 
 ## Count number of files in every sub-directory in present directory
