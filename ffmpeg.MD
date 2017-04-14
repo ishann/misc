@@ -1,4 +1,4 @@
-## All files in folder get renamed sequentially for ffmpeg to make a video sequence out of them.
+## Rename files in folder sequentially to make video sequence.
   `ls | cat -n | while read n f; do mv "$f" "file-$n.bmp"; done`
 
 ## Make a video out of sequential image filenames.
