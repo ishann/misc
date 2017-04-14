@@ -52,3 +52,5 @@
 ## Recursively convert all files from ext1 to ext2
   `find . -name '*.ext1' -type f -exec bash -c 'convert "$0" "${0%.ext1}.ext2"' {} \;`
 
+## Count number of files in each subdirectory relative to present directory.
+  `find -maxdepth 1 -type d | while read -r dir; do printf "%s:\t" "$dir"; find "$dir" -type f | wc -l; done`
