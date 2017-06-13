@@ -3,5 +3,6 @@
 
 ## Set up kernel for environment manually.
   `source activate envName`
+
   `python -m ipykernel install --user --name envName --display-name "Python (envName)"`
    ### Source : https://goo.gl/gR2bNL
