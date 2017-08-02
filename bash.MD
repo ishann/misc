@@ -54,3 +54,6 @@
 
 ## Count number of files in each subdirectory relative to present directory.
   `find -maxdepth 1 -type d | while read -r dir; do printf "%s:\t" "$dir"; find "$dir" -type f | wc -l; done`
+  
+## Recursive statistics on file types in directory.
+  ` find . -type f | sed 's/.*\.//' | sort | uniq -c`
