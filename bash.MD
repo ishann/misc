@@ -57,3 +57,6 @@
   
 ## Recursive statistics on file types in directory.
   ` find . -type f | sed 's/.*\.//' | sort | uniq -c`
+  
+## List dimensions of each JPEG image in directory
+  ` for name in *.JPEG; do convert $name -print "$name Size: %wx%h\n" /dev/null; done`
